@@ -129,7 +129,7 @@ function getAverage(arr) {
   resolt.toFixed(2);
   return Number.isInteger(resolt) ? resolt : +resolt.toFixed(2);
 }
-
+// console.log(getAverage([1, 10, 100, 1000]));
 /**
  * Checks if all strings in an array have the same length.
  *
@@ -140,10 +140,11 @@ function getAverage(arr) {
  *    isSameLength(['orange', 'banana', 'cherry']) => true
  *    isSameLength(['cat', 'dog', 'elephant']) => false
  */
-function isSameLength(/* arr */) {
-  throw new Error('Not implemented');
+function isSameLength(arr) {
+  const res = arr[0].length;
+  return arr.every((item) => item.length === res);
 }
-
+console.log(isSameLength(['cat']));
 /**
  * Checks if there are elements in the array where the value is equal to its index.
  *
