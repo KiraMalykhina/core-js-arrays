@@ -144,7 +144,7 @@ function isSameLength(arr) {
   const res = arr[0].length;
   return arr.every((item) => item.length === res);
 }
-console.log(isSameLength(['cat']));
+// console.log(isSameLength(['cat']));
 /**
  * Checks if there are elements in the array where the value is equal to its index.
  *
