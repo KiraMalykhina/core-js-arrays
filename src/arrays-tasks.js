@@ -156,10 +156,10 @@ function isSameLength(arr) {
  *    isValueEqualsIndex([2, 1, 0, 4, 5]) => true
  *    isValueEqualsIndex([10, 20, 30, 40, 50]) => false
  */
-function isValueEqualsIndex(/* arr */) {
-  throw new Error('Not implemented');
+function isValueEqualsIndex(arr) {
+  return arr.some((x, i) => x === i);
 }
-
+// console.log(isValueEqualsIndex([2, 1, 0, 4, 5]));
 /**
  * Inserts the item into specified array at specified index.
  *
