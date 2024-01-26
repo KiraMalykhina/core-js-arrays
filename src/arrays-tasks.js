@@ -255,20 +255,19 @@ function distinct(arr) {
 /**
  * Creates an n-dimensional array and fills it with zeros.
  *
- * @param {number} n - Depth of outter array (n > 0).
- * @param {number} size - Length of all arrays (size > 0).
+ 
  * @return {array} - The n-dimensional array filled with zeros.
- *
+ ** @param {number} n - Depth of outter array (n > 0).
+ * @param {number} size - Length of all arrays (size > 0).
  * @example
  *    createNDimensionalArray(2, 3) => [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
  *    createNDimensionalArray(3, 2) => [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]
  *    createNDimensionalArray(4, 2) => [[[[0, 0], [0, 0]], [[0, 0], [0, 0]]], [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]]
  *    createNDimensionalArray(1, 1) => [0]
  */
-function createNDimensionalArray(n, size ) {
-  return  [...Array(size)].map(item => Array(n).fill(0));
+function createNDimensionalArray(/* n, size */) {
+  throw new Error('Not implemented');
 }
-// console.log(createNDimensionalArray(2, 3));
 /**
  * Flattens a nested array into a single-level array.
  *
