@@ -248,10 +248,10 @@ function toStringList(arr) {
  *   distinct([ 1, 1, 2, 2, 3, 3, 4, 4]) => [ 1, 2, 3, 4]
  *   distinct([]) => []
  */
-function distinct(/* arr */) {
-  throw new Error('Not implemented');
+function distinct(arr) {
+  return [...new Set(arr)];
 }
-
+// console.log(distinct([ 1, 2, 3, 3, 2, 1 ]));
 /**
  * Creates an n-dimensional array and fills it with zeros.
  *
@@ -265,10 +265,10 @@ function distinct(/* arr */) {
  *    createNDimensionalArray(4, 2) => [[[[0, 0], [0, 0]], [[0, 0], [0, 0]]], [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]]
  *    createNDimensionalArray(1, 1) => [0]
  */
-function createNDimensionalArray(/* n, size */) {
-  throw new Error('Not implemented');
+function createNDimensionalArray(n, size ) {
+  return  [...Array(size)].map(item => Array(n).fill(0));
 }
-
+// console.log(createNDimensionalArray(2, 3));
 /**
  * Flattens a nested array into a single-level array.
  *
