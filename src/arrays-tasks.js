@@ -279,10 +279,10 @@ function createNDimensionalArray(/* n, size */) {
  *    flattenArray(['a', ['b', ['c', 'd'], 'e'], 'f']) => ['a', 'b', 'c', 'd', 'e', 'f']
  *    flattenArray([1, 2, 3, 4]) => [1, 2, 3, 4]
  */
-function flattenArray(/* nestedArray */) {
-  throw new Error('Not implemented');
+function flattenArray(nestedArray) {
+  return nestedArray.flat(Infinity);
 }
-
+// console.log(flattenArray(['a', ['b', ['c', 'd'], 'e'], 'f']));
 /**
  * Projects each element of the specified array to a sequence
  * and flattens the resulting sequences into one array.
@@ -296,8 +296,8 @@ function flattenArray(/* nestedArray */) {
  *   selectMany([[1, 2], [3, 4], [5, 6]], (x) => x) =>   [ 1, 2, 3, 4, 5, 6 ]
  *   selectMany(['one','two','three'], (x) => x.split('')) =>   ['o','n','e','t','w','o','t','h','r','e','e']
  */
-function selectMany(/* arr, childrenSelector */) {
-  throw new Error('Not implemented');
+function selectMany(arr, childrenSelector) {
+  return arr.flatMap(childrenSelector);
 }
 
 /**
@@ -315,8 +315,9 @@ function selectMany(/* arr, childrenSelector */) {
  */
 function calculateBalance(/* arr */) {
   throw new Error('Not implemented');
+  // return arr.map((item, i) => item[0] - item[1]);
 }
-
+// console.log(calculateBalance([ [ 10, 8 ], [ 5, 1 ] ]));
 /**
  * Breaks an array into chunks of the specified size.
  *
