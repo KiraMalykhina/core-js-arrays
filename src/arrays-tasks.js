@@ -530,10 +530,22 @@ function shiftArray(/* arr, n */) {
  *   sortDigitNamesByNumericOrder([ 'nine','eight','nine','eight' ]) => [ 'eight','eight','nine','nine']
  *   sortDigitNamesByNumericOrder([ 'one','one','one','zero' ]) => [ 'zero','one','one','one' ]
  */
-function sortDigitNamesByNumericOrder(/* arr */) {
-  throw new Error('Not implemented');
+function sortDigitNamesByNumericOrder(arr) {
+  const arrSort = [
+    'zero',
+    'one',
+    'two',
+    'three',
+    'four',
+    'five',
+    'six',
+    'seven',
+    'eight',
+    'nine',
+  ];
+  return arr.sort((item, cur) => arrSort.indexOf(item) - arrSort.indexOf(cur));
 }
-
+// console.log(sortDigitNamesByNumericOrder([ 'nine','eight','nine','eight' ]));
 /**
  * Swaps the head and tail of the specified array:
  * the head (first half) of array move to the end, the tail (last half) move to the start.
@@ -553,9 +565,13 @@ function sortDigitNamesByNumericOrder(/* arr */) {
  *   swapHeadAndTail([]) => []
  *
  */
-function swapHeadAndTail(/* arr */) {
-  throw new Error('Not implemented');
+function swapHeadAndTail(arr) {
+  const midle = Math.floor(arr.length / 2);
+  const head = arr.splice(0, midle);
+  const taile = arr.splice(-midle);
+  return taile.concat(arr, head);
 }
+// console.log(swapHeadAndTail([ 1, 2, 3, 4, 5, 6, 7, 8 ]));
 
 module.exports = {
   getIntervalArray,
