@@ -481,7 +481,6 @@ function findCommonElements(/* arr1, arr2 */) {
 function findLongestIncreasingSubsequence(/* nums */) {
   throw new Error('Not implemented');
 }
-
 /**
  * Propagates every item in sequence its position times
  * Returns an array that consists of: one first item, two second items, three third items etc.
@@ -496,17 +495,12 @@ function findLongestIncreasingSubsequence(/* nums */) {
  *  propagateItemsByPositionIndex([ 'a', 'b', 'c', null ]) => [ 'a', 'b', 'b', 'c', 'c', 'c',  null, null, null, null ]
  *  propagateItemsByPositionIndex([ 1,2,3,4,5 ]) => [ 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 5 ]
  */
-function propagateItemsByPositionIndex(/* arr */) {
-  throw new Error('Not implemented');
+function propagateItemsByPositionIndex(arr) {
+  return arr.flatMap((item, cur) => Array.from({ length: cur + 1 }).fill(item));
 }
-
+// console.log(propagateItemsByPositionIndex([ 'a', 'b', 'c', null ]));
 /**
- * Shifts an array by n positions. If n is negative, the array is shifted to the left;
- * if positive, it is shifted to the right.
- *
- * @param {array} arr - The array to be shifted.
- * @param {number} n - The number of positions to shift the array elements.
- * @return {array} - The shifted array.
+n >
  *
  * @example
  *    shiftArray([1, 2, 3, 4, 5], 2) => [4, 5, 1, 2, 3]
