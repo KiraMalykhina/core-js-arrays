@@ -313,9 +313,11 @@ function selectMany(arr, childrenSelector) {
  *   calculateBalance([ [ 10, 8 ], [ 1, 5 ] ])  => (10 - 8) + (1 - 5) = 2 + -4 = -2
  *   calculateBalance([]) => 0
  */
-function calculateBalance(/* arr */) {
-  throw new Error('Not implemented');
-  // return arr.map((item, i) => item[0] - item[1]);
+function calculateBalance(arr) {
+  return arr
+    .map((data) => data)
+    .map((data) => data[0] - data[1])
+    .reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 }
 // console.log(calculateBalance([ [ 10, 8 ], [ 5, 1 ] ]));
 /**
@@ -517,10 +519,21 @@ n >
  *    shiftArray(['a', 'b', 'c', 'd'], -1) => ['b', 'c', 'd', 'a']
  *    shiftArray([10, 20, 30, 40, 50], -3) => [40, 50, 10, 20, 30]
  */
-function shiftArray(/* arr, n */) {
-  throw new Error('Not implemented');
+function shiftArray(arr, n) {
+  if (n > 0) {
+    arr.map((value, i) => {
+      if (i < n) arr.unshift(arr.pop());
+      return true;
+    });
+  } else {
+    arr.map((value, i) => {
+      if (i < Math.abs(n)) arr.push(arr.shift());
+      return true;
+    });
+  }
+  return arr;
 }
-
+// console.log(shiftArray([1, 2, 3, 4, 5], 2));
 /**
  * Sorts digit names.
  *
