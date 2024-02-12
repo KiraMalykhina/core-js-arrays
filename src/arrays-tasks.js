@@ -265,8 +265,16 @@ function distinct(arr) {
  *    createNDimensionalArray(4, 2) => [[[[0, 0], [0, 0]], [[0, 0], [0, 0]]], [[[0, 0], [0, 0]], [[0, 0], [0, 0]]]]
  *    createNDimensionalArray(1, 1) => [0]
  */
-function createNDimensionalArray(/* n, size */) {
-  throw new Error('Not implemented');
+function createArray(dimensions, curDimension, size) {
+  if (curDimension <= dimensions - 1) {
+    return new Array(size).fill(
+      createArray(dimensions, curDimension + 1, size)
+    );
+  }
+  return new Array(size).fill(0, 0);
+}
+function createNDimensionalArray(n, size) {
+  return createArray(n, 1, size);
 }
 /**
  * Flattens a nested array into a single-level array.
